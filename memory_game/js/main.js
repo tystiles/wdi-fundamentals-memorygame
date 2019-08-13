@@ -1,7 +1,44 @@
 
 console.log("Up and running!");
 
-var cardOne = "King of Hearts(test)";
-var cardTwo = "Queen of Diamonds(test)";
+var cards = ["queen", "queen", "king", "king"];
+
+var cardsInPlay = [];
+
+var cardOne = cards[0];
+
+cardsInPlay.push(cardOne);
+
+
 
 console.log("User flipped " + cardOne);
+
+
+var cardTwo = cards[2];
+
+
+cardsInPlay.push(cardTwo);
+
+
+
+console.log("User flipped " + cardTwo);
+
+
+if (cardsInPlay.length === 2)
+{
+	/*console.log ("User picked two cards")*/
+
+
+	if (cardsInPlay[0] ===cardsInPlay[1])
+
+		alert("You found a match!");
+
+	else
+
+		alert("Sorry, try again.");
+
+}
+
+else
+
+	console.log("Two cards have not been picked yet!");
