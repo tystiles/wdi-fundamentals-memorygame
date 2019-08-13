@@ -1,44 +1,51 @@
 
-console.log("Up and running!");
 
 var cards = ["queen", "queen", "king", "king"];
 
 var cardsInPlay = [];
 
-var cardOne = cards[0];
 
-cardsInPlay.push(cardOne);
+function checkForMatch(){
 
+	if (cardsInPlay[0] === cardsInPlay[1])
 
-
-console.log("User flipped " + cardOne);
-
-
-var cardTwo = cards[2];
-
-
-cardsInPlay.push(cardTwo);
-
-
-
-console.log("User flipped " + cardTwo);
-
-
-if (cardsInPlay.length === 2)
-{
-	/*console.log ("User picked two cards")*/
-
-
-	if (cardsInPlay[0] ===cardsInPlay[1])
-
-		alert("You found a match!");
+		console.log("You found a match!");
 
 	else
 
-		alert("Sorry, try again.");
+		console.log("Sorry, try again.");
 
 }
 
-else
 
-	console.log("Two cards have not been picked yet!");
+function flipCard(cardId){
+
+
+	console.log("User flipped " + cards[cardId]);
+
+
+	cardsInPlay.push(cards[cardId]);
+
+
+	if (cardsInPlay.length === 2)
+	{
+		/*console.log ("User picked two cards")*/
+
+
+		checkForMatch();
+
+	}
+
+	/*else
+
+		console.log("Two cards have not been picked yet!");*/
+
+}
+
+
+
+flipCard(0);
+
+flipCard(2);
+
+
