@@ -30,6 +30,43 @@ var cards = [
 var cardsInPlay = [];
 
 
+function createBoard(){
+
+	
+	for (var i=0; i < cards.length; i++)
+	{
+		var cardElement = document.createElement('img');
+
+		cardElement.setAttribute('src', 'images/back.png');
+
+		cardElement.setAttribute('data-id', i);
+
+		cardElement.addEventListener('click', flipCard);
+
+
+		document.getElementById('game-board').appendChild(cardElement);
+
+	}
+
+}
+
+function resetBoard(){
+
+	cardsInPlay = [];
+
+    
+    var cardDisplay = document.getElementsByTagName('img');
+
+
+	for (var i=0; i < cardDisplay.length; i++)
+	{
+		cardDisplay[i].setAttribute('src', 'images/back.png');
+	
+	}
+
+}
+
+
 function checkForMatch(){
 
 	if (cardsInPlay[0] === cardsInPlay[1])
@@ -43,36 +80,36 @@ function checkForMatch(){
 }
 
 
-function flipCard(cardId){
+function flipCard(){
 
-
-	console.log("User flipped " + cards[cardId].rank);
-	console.log(cards[cardId].cardImage);
-	console.log(cards[cardId].suit);
+	var cardId = this.getAttribute('data-id');
 	
 
 	cardsInPlay.push(cards[cardId].rank);
 
 
+	this.setAttribute('src', cards[cardId].cardImage);
+
+
 	if (cardsInPlay.length === 2)
 	{
-		/*console.log ("User picked two cards")*/
-
 
 		checkForMatch();
 
 	}
 
-	/*else
-
-		console.log("Two cards have not been picked yet!");*/
-
+	
 }
 
 
 
-flipCard(0);
 
-flipCard(2);
+document.getElementsByTagName('button')[0].addEventListener('click', resetBoard);
+
+
+
+createBoard();
+
+
 
 

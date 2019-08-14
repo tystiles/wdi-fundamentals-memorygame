@@ -78,6 +78,16 @@ img {
 	margin: 40px 8px 0px 8px;
 }
 
+button {
+
+	color: white;
+	background-color: red;
+	margin-top: 20px;
+	font-size: 12px;
+
+}
+
+
 footer {
 	text-transform: uppercase;
 	margin: 0 20px;
